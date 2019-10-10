@@ -16,16 +16,12 @@ class App extends Component {
       params: { q }
     });
 
-    console.log(response.data.items);
-
     this.setState({
       users: response.data.items
     });
   }
   onUserSelect = async ({ login }) => {
     const response = await github.get(`/users/${login}`);
-
-    console.log(response.data);
 
     this.setState({
       selectedUser: response.data

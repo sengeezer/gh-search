@@ -3,17 +3,17 @@ import React from 'react';
 const ViewModeSwitch = () => {
   return (
     <div class="ui compact menu">
-      <a class="item">
+      <a class="item active">
         <i class="gamepad icon"></i>
-        Games
+        List
       </a>
       <a class="item">
         <i class="video camera icon"></i>
-        Channels
+        Repos
       </a>
       <a class="item">
         <i class="video play icon"></i>
-        Videos
+        Subscribers
       </a>
     </div>
   );

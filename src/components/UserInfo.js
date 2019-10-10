@@ -13,8 +13,44 @@ const UserInfo = ({ user }) => {
     <div>
       <div className="ui segment">
         <h4 className="ui header">{user.name}</h4>
-        <p>{user.login}</p>
-        <p>{user.location}</p>
+        <div className="ui list">
+          <div className="item">
+            <div className="header">
+              Username
+            </div>
+            {user.login}
+          </div>
+          <div className="item">
+            <div className="header">
+              Location
+            </div>
+            {user.location}
+          </div>
+          <div className="item">
+            <div className="header">
+              Bio
+            </div>
+            {user.bio}
+          </div>
+          <div className="item">
+            <div className="header">
+              Followers
+            </div>
+            {user.followers}
+          </div>
+          <div className="item">
+            <div className="header">
+              Repos
+            </div>
+            {user.public_repos}
+          </div>
+          <div className="item">
+            <div className="header">
+              Gists
+            </div>
+            {user.public_gists}
+          </div>
+        </div>
       </div>
     </div>
   );
