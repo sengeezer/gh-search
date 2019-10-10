@@ -30,8 +30,18 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-
+      <div className="ui container App">
+        <h1>Debut Github Search</h1>
+        <div className="ui grid">
+          <div className="ui row">
+            <div className="four wide column">
+              (List of usernames)
+            </div>
+            <div className="twelve wide column">
+              (Info about user)
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
