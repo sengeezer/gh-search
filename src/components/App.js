@@ -36,7 +36,7 @@ class App extends Component {
         <div className="ui grid">
           <div className="ui row">
             <div className="column">
-            <SearchBar />
+            <SearchBar onFormSubmit={this.onQuerySubmit} />
             </div>
           </div>
           <div className="ui row">
