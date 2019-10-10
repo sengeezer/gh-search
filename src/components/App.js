@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import github from '../apis/github';
 import SearchBar from './SearchBar';
+import UserList from './UserList';
+import UserInfo from './UserInfo';
 
 class App extends Component {
   state = {
@@ -20,8 +22,8 @@ class App extends Component {
       users: response.data.items
     });
   }
-  onUserSelect = async username => {
-    const response = await github.get(`/users/${username}`);
+  onUserSelect = async ({ login }) => {
+    const response = await github.get(`/users/${login}`);
 
     console.log(response.data);
 
@@ -41,10 +43,10 @@ class App extends Component {
           </div>
           <div className="ui row">
             <div className="four wide column">
-              (List of usernames)
+              <UserList users={this.state.users} onUserSelect={this.onUserSelect} />
             </div>
             <div className="twelve wide column">
-              (Info about user)
+              <UserInfo user={this.state.selectedUser} />
             </div>
           </div>
         </div>
