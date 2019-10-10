@@ -14,7 +14,7 @@ const User = ({ user, onUserSelect }) => {
       />
       <div className="content">
         <div className="header">{user.login}</div>
-        <div className="description">{user.score}</div>
+        <div className="description">Score: {user.score}</div>
       </div>
     </div>
   );

@@ -2,7 +2,11 @@ import React from 'react';
 
 const UserInfo = ({ user }) => {
   if (!user) {
-    return <div>Please make a selection</div>
+    return (
+      <div className="ui segment">
+        {/* Please make a selection */}
+      </div>
+    );
   }
 
   return (

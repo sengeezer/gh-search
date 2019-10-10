@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SearchBar.scss';
 
 class SearchBar extends Component {
   state = { query: ''};
@@ -25,7 +26,7 @@ class SearchBar extends Component {
               />
             </div>
             <div className="two wide field">
-              <button type="submit" className="ui submit button">Submit</button>
+              <button type="submit" className="searchBarButton ui submit button">Search</button>
             </div>
           </div>
         </form>
