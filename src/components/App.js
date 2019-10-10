@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import github from '../apis/github';
+import SearchBar from './SearchBar';
 
 class App extends Component {
   state = {
@@ -33,6 +34,11 @@ class App extends Component {
       <div className="ui container App">
         <h1>Debut Github Search</h1>
         <div className="ui grid">
+          <div className="ui row">
+            <div className="column">
+            <SearchBar />
+            </div>
+          </div>
           <div className="ui row">
             <div className="four wide column">
               (List of usernames)
