@@ -46,6 +46,7 @@ class App extends Component {
               <UserList users={this.state.users} onUserSelect={this.onUserSelect} />
             </div>
             <div className="twelve wide column">
+              {/* Switch view mode */}
               <UserInfo user={this.state.selectedUser} />
             </div>
           </div>

@@ -3,7 +3,7 @@ import React from 'react';
 const UserInfo = ({ user }) => {
   if (!user) {
     return (
-      <div className="ui segment">
+      <div className="ui placeholder segment">
         {/* Please make a selection */}
       </div>
     );
