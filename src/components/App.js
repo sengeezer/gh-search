@@ -14,7 +14,7 @@ class App extends Component {
       params: { q }
     });
 
-    console.log(response);
+    console.log(response.data.items);
 
     this.setState({
       users: response.data.items
@@ -23,7 +23,7 @@ class App extends Component {
   onUserSelect = async username => {
     const response = await github.get(`/users/${username}`);
 
-    console.log(response);
+    console.log(response.data);
 
     this.setState({
       selectedUser: response.data
