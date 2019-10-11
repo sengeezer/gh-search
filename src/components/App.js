@@ -20,6 +20,7 @@ class App extends Component {
 
     this.setState({
       users: response.data.items,
+      selectedUser: null,
       usersFound: response.data.items.length
     });
   }
