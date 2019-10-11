@@ -4,10 +4,12 @@ import github from '../apis/github';
 import SearchBar from './SearchBar';
 import UserList from './UserList';
 import UserInfo from './UserInfo';
+import UsersFound from './UsersFound';
 
 class App extends Component {
   state = {
     users: [],
+    usersFound: null,
     selectedUser: null,
     selectedView: 'list'
   }
@@ -16,12 +18,17 @@ class App extends Component {
       params: { q }
     });
 
+    console.log(response.data.items);
+
     this.setState({
-      users: response.data.items
+      users: response.data.items,
+      usersFound: response.data.items.length
     });
   }
   onUserSelect = async ({ login }) => {
     const response = await github.get(`/users/${login}`);
+
+    console.log(response.data);
 
     this.setState({
       selectedUser: response.data
@@ -39,6 +46,7 @@ class App extends Component {
           </div>
           <div className="ui row">
             <div className="four wide column">
+              <UsersFound usersFound={this.state.usersFound} />
               <UserList users={this.state.users} onUserSelect={this.onUserSelect} />
             </div>
             <div className="twelve wide column">

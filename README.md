@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Tasks remaining
+
+* Display error message when no users found
+* Build out view mode switch
+* Polish styling
+* Add Unit and E2E tests
+
 ## Available Scripts
 
 ### `yarn start`
