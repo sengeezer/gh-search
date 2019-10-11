@@ -12,7 +12,7 @@ class App extends Component {
     users: [],
     usersFound: null,
     selectedUser: null,
-    selectedView: 'plainList'
+    selectedView: 'alignjustify'
   }
   onQuerySubmit = async q => {
     const response = await github.get('/search/users', {
@@ -32,6 +32,15 @@ class App extends Component {
       selectedUser: response.data
     });
   }
+  onViewModeSwitch = evt => {
+    const classList = evt.target.children[0].className.split(' ');
+    classList.pop();
+    const mode = classList.join('');
+    
+    this.setState({
+      selectedView: mode
+    });
+  }
   render() {
     return (
       <div className="ui container App">
@@ -45,11 +54,23 @@ class App extends Component {
           <div className="ui row">
             <div className="four wide column">
               <UsersFound usersFound={this.state.usersFound} />
-              <UserList users={this.state.users} onUserSelect={this.onUserSelect} />
+              <UserList
+                users={this.state.users}
+                onUserSelect={this.onUserSelect}
+              />
             </div>
             <div className="twelve wide column">
-              {this.state.selectedUser && <ViewModeSwitch selectedView={this.state.selectedView} />}
-              <UserInfo user={this.state.selectedUser} selectedView={this.state.selectedView} />
+              {
+                this.state.selectedUser
+                && <ViewModeSwitch
+                  selectedView={this.state.selectedView}
+                  onViewModeSwitch={this.onViewModeSwitch}
+                />
+              }
+              <UserInfo
+                user={this.state.selectedUser}
+                selectedView={this.state.selectedView}
+              />
             </div>
           </div>
         </div>

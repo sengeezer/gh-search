@@ -1,22 +1,31 @@
 import React from 'react';
 
-const ViewModeSwitch = ({ selectedView }) => {
+const ViewModeSwitch = ({ selectedView, onViewModeSwitch }) => {
   const viewType = selectedView;
 
   return (
-    <div class="ui compact menu">
-      <a class={`item${viewType === 'plainList' ? ' active' : ''}`}>
-        <i class="align justify icon"></i>
+    <div className="ui compact menu">
+      <button
+        className={`item${viewType === 'alignjustify' ? ' active' : ''}`}
+        onClick={onViewModeSwitch}
+      >
+        <i className="align justify icon"></i>
         Plain List
-      </a>
-      <a class={`item${viewType === 'list' ? ' active' : ''}`}>
-        <i class="list icon"></i>
+      </button>
+      <button
+        className={`item${viewType === 'list' ? ' active' : ''}`}
+        onClick={onViewModeSwitch}
+      >
+        <i className="list icon"></i>
         List
-      </a>
-      <a class="item">
-        <i class="list ol icon"></i>
+      </button>
+      <button
+        className={`item${viewType === 'listol' ? ' active' : ''}`}
+        onClick={onViewModeSwitch}
+      >
+        <i className="list ol icon"></i>
         Numbered List
-      </a>
+      </button>
     </div>
   );
 };
