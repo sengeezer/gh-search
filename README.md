@@ -5,7 +5,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Tasks remaining
 
-* Display error message when no users found
 * Build out view mode switch
 * Polish styling
 * Add Unit and E2E tests
