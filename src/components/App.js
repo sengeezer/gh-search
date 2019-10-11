@@ -5,13 +5,14 @@ import SearchBar from './SearchBar';
 import UserList from './UserList';
 import UserInfo from './UserInfo';
 import UsersFound from './UsersFound';
+import ViewModeSwitch from './ViewModeSwitch';
 
 class App extends Component {
   state = {
     users: [],
     usersFound: null,
     selectedUser: null,
-    selectedView: 'list'
+    selectedView: 'plainList'
   }
   onQuerySubmit = async q => {
     const response = await github.get('/search/users', {
@@ -47,8 +48,8 @@ class App extends Component {
               <UserList users={this.state.users} onUserSelect={this.onUserSelect} />
             </div>
             <div className="twelve wide column">
-              {/* Switch view mode */}
-              <UserInfo user={this.state.selectedUser} />
+              {this.state.selectedUser && <ViewModeSwitch selectedView={this.state.selectedView} />}
+              <UserInfo user={this.state.selectedUser} selectedView={this.state.selectedView} />
             </div>
           </div>
         </div>

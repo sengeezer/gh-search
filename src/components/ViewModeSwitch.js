@@ -1,19 +1,21 @@
 import React from 'react';
 
-const ViewModeSwitch = () => {
+const ViewModeSwitch = ({ selectedView }) => {
+  const viewType = selectedView;
+
   return (
     <div class="ui compact menu">
-      <a class="item active">
-        <i class="gamepad icon"></i>
+      <a class={`item${viewType === 'plainList' ? ' active' : ''}`}>
+        <i class="align justify icon"></i>
+        Plain List
+      </a>
+      <a class={`item${viewType === 'list' ? ' active' : ''}`}>
+        <i class="list icon"></i>
         List
       </a>
       <a class="item">
-        <i class="video camera icon"></i>
-        Repos
-      </a>
-      <a class="item">
-        <i class="video play icon"></i>
-        Subscribers
+        <i class="list ol icon"></i>
+        Numbered List
       </a>
     </div>
   );

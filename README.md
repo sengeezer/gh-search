@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Tasks remaining
 
 * Build out view mode switch
+* Add user list pagination (to display more than 30 results)
 * Polish styling
 * Add Unit and E2E tests
 

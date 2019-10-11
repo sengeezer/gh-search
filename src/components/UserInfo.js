@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserInfo = ({ user }) => {
+const UserInfo = ({ user, selectedView }) => {
   if (!user) {
     return (
       <div>
