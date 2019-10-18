@@ -33,18 +33,22 @@ class App extends Component {
     });
   }
   onViewModeSwitch = evt => {
-    const classList = evt.target.children[0].className.split(' ');
-    classList.pop();
-    const mode = classList.join('');
+    console.log(evt.target);
+
+    if (evt.target.children.length) {
+      const classList = evt.target.children[0].className.split(' ');
+      classList.pop();
+      const mode = classList.join('');
     
-    this.setState({
-      selectedView: mode
-    });
+      this.setState({
+        selectedView: mode
+      });
+    }
   }
   render() {
     return (
       <div className="ui container App">
-        <h1>Debut Github Search</h1>
+        <h1>Simple Github Search</h1>
         <div className="ui grid">
           <div className="ui row">
             <div className="column">

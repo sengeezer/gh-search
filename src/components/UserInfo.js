@@ -1,6 +1,7 @@
 import React from 'react';
 
 const UserInfo = ({ user, selectedView }) => {
+  let viewClass= '';
   if (!user) {
     return (
       <div>
@@ -9,11 +10,26 @@ const UserInfo = ({ user, selectedView }) => {
     );
   }
 
+  switch(selectedView) {
+    case 'list':
+      viewClass = ' bulleted list';
+      break;
+    case 'listol':
+      viewClass = ' ordered list';
+      break;
+    case 'alignjustify':
+    default:
+      viewClass = ' list';
+  }
+
   return (
     <div>
       <div className="ui segment">
         <h4 className="ui header">{user.name}</h4>
-        <div className="ui list">
+        <div
+          className={`ui${viewClass}`}
+          // className="ui list"
+        >
           <div className="item">
             <div className="header">
               Username
