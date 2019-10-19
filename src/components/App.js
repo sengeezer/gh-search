@@ -32,18 +32,10 @@ class App extends Component {
       selectedUser: response.data
     });
   }
-  onViewModeSwitch = evt => {
-    console.log(evt.target);
-
-    if (evt.target.children.length) {
-      const classList = evt.target.children[0].className.split(' ');
-      classList.pop();
-      const mode = classList.join('');
-    
-      this.setState({
-        selectedView: mode
-      });
-    }
+  onViewModeSwitch = mode => {
+    this.setState({
+      selectedView: mode
+    });
   }
   render() {
     return (

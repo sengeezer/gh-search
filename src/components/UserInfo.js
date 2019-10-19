@@ -26,10 +26,7 @@ const UserInfo = ({ user, selectedView }) => {
     <div>
       <div className="ui segment">
         <h4 className="ui header">{user.name}</h4>
-        <div
-          className={`ui${viewClass}`}
-          // className="ui list"
-        >
+        <div className={`ui${viewClass}`}>
           <div className="item">
             <div className="header">
               Username

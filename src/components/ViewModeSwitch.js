@@ -7,21 +7,21 @@ const ViewModeSwitch = ({ selectedView, onViewModeSwitch }) => {
     <div className="ui compact menu">
       <button
         className={`item${viewType === 'alignjustify' ? ' active' : ''}`}
-        onClick={onViewModeSwitch}
+        onClick={() => onViewModeSwitch('alignjustify')}
       >
         <i className="align justify icon"></i>
         Plain List
       </button>
       <button
         className={`item${viewType === 'list' ? ' active' : ''}`}
-        onClick={onViewModeSwitch}
+        onClick={() => onViewModeSwitch('list')}
       >
         <i className="list icon"></i>
         List
       </button>
       <button
         className={`item${viewType === 'listol' ? ' active' : ''}`}
-        onClick={onViewModeSwitch}
+        onClick={() => onViewModeSwitch('listol')}
       >
         <i className="list ol icon"></i>
         Numbered List
